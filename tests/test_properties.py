@@ -27,6 +27,7 @@ def hex_colors(draw):
 def tufte_themes(draw):
     """Generate random but valid TufteTheme configurations."""
     font_families = [
+        "Inter",
         "Arial",
         "Helvetica",
         "Verdana",
@@ -293,7 +294,14 @@ def custom_theme_params(draw):
     return {
         "font_family": draw(
             st.sampled_from(
-                ["Arial", "Times New Roman", "Palatino", "Garamond", "Helvetica"]
+                [
+                    "Inter",
+                    "Arial",
+                    "Times New Roman",
+                    "Palatino",
+                    "Garamond",
+                    "Helvetica",
+                ]
             )
         ),
         "title_size": draw(st.integers(min_value=10, max_value=24)),
@@ -388,6 +396,7 @@ def dataframes_for_plotting(draw):
 def matplotlib_compatible_themes(draw):
     """Generate themes with matplotlib-compatible color values."""
     font_families = [
+        "Inter",
         "Arial",
         "Helvetica",
         "Verdana",

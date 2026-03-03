@@ -114,7 +114,7 @@ class TestThemeCustomization:
     def test_custom_theme_application(self):
         """Test applying custom theme to plot."""
         custom_theme = TufteTheme(
-            font_family="Arial",
+            font_family="Inter",
             title_size=16,
             color_palette=["#FF0000", "#00FF00", "#0000FF"],
         )

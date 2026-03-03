@@ -18,7 +18,7 @@ def test_theme_manager_init_default():
     theme = manager.get_theme()
 
     assert isinstance(theme, TufteTheme)
-    assert theme.font_family == "Arial"
+    assert theme.font_family == "Inter"
     assert theme.font_fallback == "sans-serif"
     assert theme.title_size == 18
     assert theme.label_size == 14
@@ -26,7 +26,7 @@ def test_theme_manager_init_default():
 
 def test_theme_manager_init_custom():
     """Test ThemeManager initialization with custom theme."""
-    custom_theme = TufteTheme(font_family="Arial", title_size=16, show_grid=True)
+    custom_theme = TufteTheme(font_family="Inter", title_size=16, show_grid=True)
     manager = ThemeManager(theme=custom_theme)
     theme = manager.get_theme()
 
@@ -88,7 +88,7 @@ def test_theme_manager_update_theme_modifies_internal_state():
 def test_theme_manager_export_theme():
     """Test exporting theme to JSON file."""
     manager = ThemeManager()
-    manager.update_theme(title_size=16, font_family="Arial")
+    manager.update_theme(title_size=16, font_family="Inter")
 
     with tempfile.NamedTemporaryFile(mode="w", delete=False, suffix=".json") as f:
         filepath = f.name
@@ -103,7 +103,7 @@ def test_theme_manager_export_theme():
             data = json.load(f)
 
         assert data["title_size"] == 16
-        assert data["font_family"] == "Arial"
+        assert data["font_family"] == "Inter"
     finally:
         if os.path.exists(filepath):
             os.remove(filepath)

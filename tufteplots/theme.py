@@ -11,14 +11,13 @@ import json
 
 
 DEFAULT_COLOR_PALETTE = [
-    "#4e79a7",
-    "#f28e2b",
-    "#e15759",
-    "#76b7b2",
-    "#59a14f",
-    "#edc948",
-    "#b07aa1",
-    "#ff9da7",
+    "#004D8C",  # SINTEF Deep Blue
+    "#D95319",  # MATLAB Orange
+    "#EDB120",  # MATLAB Yellow
+    "#7E2F8E",  # MATLAB Purple
+    "#77AC30",  # MATLAB Green
+    "#4DBEEE",  # MATLAB Cyan
+    "#A2142F",  # MATLAB Dark Red
 ]
 
 
@@ -32,7 +31,7 @@ class TufteTheme:
     """
 
     # Typography
-    font_family: str = "Arial"
+    font_family: str = "Inter"
     font_fallback: str = "sans-serif"
     title_size: int = 18
     label_size: int = 14

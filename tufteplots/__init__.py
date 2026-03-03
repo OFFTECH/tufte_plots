@@ -83,6 +83,24 @@ Supported Backends
 For more information, see the documentation at https://github.com/yourusername/tufteplots
 """
 
+# Import and register fonts
+import os
+import glob
+
+try:
+    import matplotlib.font_manager
+
+    # Find all TTF files in the fonts directory
+    _fonts_dir = os.path.join(os.path.dirname(__file__), "fonts")
+    _font_files = matplotlib.font_manager.findSystemFonts(
+        fontpaths=[_fonts_dir], fontext="ttf"
+    )
+    # Add fonts to the font manager
+    for _font_file in _font_files:
+        matplotlib.font_manager.fontManager.addfont(_font_file)
+except ImportError:
+    pass
+
 # Core theme and configuration
 from tufteplots.theme import TufteTheme, PlotConfig, ThemeManager
 
