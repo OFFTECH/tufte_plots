@@ -26,11 +26,11 @@ def test_theme_manager_init_default():
 
 def test_theme_manager_init_custom():
     """Test ThemeManager initialization with custom theme."""
-    custom_theme = TufteTheme(font_family="Inter", title_size=16, show_grid=True)
+    custom_theme = TufteTheme(font_family="Palatino", title_size=16, show_grid=True)
     manager = ThemeManager(theme=custom_theme)
     theme = manager.get_theme()
 
-    assert theme.font_family == "Arial"
+    assert theme.font_family == "Palatino"
     assert theme.title_size == 16
     assert theme.show_grid is True
 
