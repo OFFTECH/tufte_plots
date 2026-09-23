@@ -1,7 +1,18 @@
+"""Regenerate the example images shown in the README.
+
+Run from anywhere: python examples/generate_readme_images.py
+Images are written to docs/images/.
+"""
+
+from pathlib import Path
+
 import pandas as pd
 import numpy as np
 import tufteplots as tp
 import matplotlib.pyplot as plt
+
+OUT_DIR = Path(__file__).resolve().parent.parent / "docs" / "images"
+OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 print("Initializing example plot generation...")
 print("Theme Font:", tp.TufteTheme().font_family)
@@ -21,9 +32,9 @@ df_line_melted = df_line.melt("Time", var_name="Series", value_name="Value")
 fig1 = tp.tufte_line_plot(
     df_line_melted, "Time", "Value", hue="Series", backend="matplotlib"
 )
-fig1.savefig("example_line_plot.png", dpi=150, bbox_inches="tight")
+fig1.savefig(OUT_DIR / "line_plot.png", dpi=150, bbox_inches="tight")
 plt.close(fig1)
-print("Generated example_line_plot.png")
+print("Generated line_plot.png")
 
 # 2. Scatter Plot
 df_scatter = pd.DataFrame(
@@ -44,24 +55,24 @@ df_scatter_melt = pd.DataFrame(
 fig2 = tp.tufte_scatter_plot(
     df_scatter_melt, "X", "Y", hue="Category", show_trend=True, backend="matplotlib"
 )
-fig2.savefig("example_scatter_plot.png", dpi=150, bbox_inches="tight")
+fig2.savefig(OUT_DIR / "scatter_plot.png", dpi=150, bbox_inches="tight")
 plt.close(fig2)
-print("Generated example_scatter_plot.png")
+print("Generated scatter_plot.png")
 
 # 3. Bar Plot
 df_bar = pd.DataFrame({"Category": ["A", "B", "C", "D"], "Value": [15, 30, 45, 20]})
 fig3 = tp.tufte_bar_plot(df_bar, "Category", "Value", backend="matplotlib")
-fig3.savefig("example_bar_plot.png", dpi=150, bbox_inches="tight")
+fig3.savefig(OUT_DIR / "bar_plot.png", dpi=150, bbox_inches="tight")
 plt.close(fig3)
-print("Generated example_bar_plot.png")
+print("Generated bar_plot.png")
 
 # 4. Histogram
 df_hist = pd.DataFrame({"Values": np.random.randn(500) * 10 + 50})
 fig4 = tp.tufte_histogram(
     df_hist, "Values", bins=20, show_rug=True, backend="matplotlib"
 )
-fig4.savefig("example_histogram.png", dpi=150, bbox_inches="tight")
+fig4.savefig(OUT_DIR / "histogram.png", dpi=150, bbox_inches="tight")
 plt.close(fig4)
-print("Generated example_histogram.png")
+print("Generated histogram.png")
 
 print("All example plots successfully generated.")

@@ -9,9 +9,9 @@ figure you already have.
 
 | Line | Scatter |
 |---|---|
-| ![Line plot](example_line_plot.png) | ![Scatter plot](example_scatter_plot.png) |
+| ![Line plot](docs/images/line_plot.png) | ![Scatter plot](docs/images/scatter_plot.png) |
 | **Bar** | **Histogram** |
-| ![Bar plot](example_bar_plot.png) | ![Histogram](example_histogram.png) |
+| ![Bar plot](docs/images/bar_plot.png) | ![Histogram](docs/images/histogram.png) |
 
 ## Installation
 
@@ -91,6 +91,8 @@ import.
 `examples/comprehensive_demo.py` walks through every plot type, theme options,
 cross-backend output and PNG/PDF/SVG export. See
 [examples/README.md](examples/README.md).
+
+The images above come from `examples/generate_readme_images.py`.
 
 ## Development
 
