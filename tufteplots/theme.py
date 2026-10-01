@@ -31,7 +31,7 @@ class TufteTheme:
     """
 
     # Typography
-    font_family: str = "Inter"
+    font_family: str = "Aptos"
     font_fallback: str = "sans-serif"
     title_size: int = 18
     label_size: int = 14

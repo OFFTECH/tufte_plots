@@ -65,3 +65,12 @@ examples/output/*.png
 examples/output/*.pdf
 examples/output/*.svg
 examples/output/*.html
+
+# Track only the installable package (tufteplots/*.py) and pyproject.toml.
+# These paths stay on disk; Git stops versioning them.
+/docs/
+/examples/
+/tests/
+/README.md
+/split_adapters.py
+/tufteplots/fonts/
